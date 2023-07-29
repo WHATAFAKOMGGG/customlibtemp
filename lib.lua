@@ -2289,6 +2289,14 @@ function RayfieldLibrary:CreateWindow(Settings)
 				--SaveConfiguration()
 			end
 
+			function DropdownSettings:Refresh(NewOptions)
+				if NewOptions then
+					DropdownSettings.Options = NewOptions
+				end
+
+				Refresh()
+			end
+
 			if Settings.ConfigurationSaving then
 				if Settings.ConfigurationSaving.Enabled and DropdownSettings.Flag then
 					RayfieldLibrary.Flags[DropdownSettings.Flag] = DropdownSettings
